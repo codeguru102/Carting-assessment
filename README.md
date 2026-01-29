@@ -2,6 +2,8 @@
 
 A full-stack e-commerce shopping cart application built with React and Node.js, featuring Stripe payment integration.
 
+**Author:** James Willingham
+
 ## Tech Stack
 
 **Frontend:** React 18, Redux Toolkit, React Router, Tailwind CSS, Vite  
