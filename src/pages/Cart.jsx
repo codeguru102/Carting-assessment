@@ -127,6 +127,34 @@ const Cart = () => {
                   </div>
                 </div>
 
+                {/* Buy All Button */}
+                <button
+                  className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 shadow-lg hover:shadow-xl ${
+                    items.length === 0
+                      ? 'bg-gray-300 cursor-not-allowed text-gray-500'
+                      : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white'
+                  }`}
+                  onClick={() => {/* TODO: Open confirmation modal */}}
+                  disabled={items.length === 0}
+                >
+                  <div className='flex items-center justify-center'>
+                    <svg className='w-5 h-5 mr-2' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z' />
+                    </svg>
+                    Buy All
+                    <span className='ml-2 bg-white/20 px-2 py-0.5 rounded-full text-sm'>
+                      ${totalPrice.toFixed(2)}
+                    </span>
+                  </div>
+                </button>
+
+                {/* Divider */}
+                <div className='flex items-center gap-3'>
+                  <div className='flex-1 h-px bg-gray-200'></div>
+                  <span className='text-gray-400 text-sm font-medium'>or</span>
+                  <div className='flex-1 h-px bg-gray-200'></div>
+                </div>
+
                 {/* Checkout Button */}
                 <button
                   className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300 shadow-lg hover:shadow-xl ${loading
@@ -149,7 +177,7 @@ const Cart = () => {
                       <svg className='w-5 h-5 mr-2' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                         <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' />
                       </svg>
-                      Secure Checkout
+                      Stripe Checkout
                     </div>
                   )}
                 </button>
